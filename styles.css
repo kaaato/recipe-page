@@ -1,0 +1,254 @@
+:root {
+  --main-backgroundColor: hsl(0, 0%, 100%);
+  --color-100: hsl(30, 54%, 90%);
+  --color-150: hsl(30, 18%, 87%);
+  --color-600: hsl(30, 10%, 34%);
+  --color-900: hsl(24, 5%, 18%);
+  --headings-color: hsl(14, 45%, 36%);
+  --timeline-color: hsl(332, 51%, 32%);
+  --timeline-backgroundColor: hsl(330, 100%, 98%);
+  --nutrition-color: hsl(30, 18%, 87%);
+  --body-desktop-backgroundColor: hsl(30, 54%, 90%);
+  --main-desktop-backgroundColor: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+ol, ul {
+  padding-bottom: 32px;
+  margin-top: 16px;
+  border-bottom: solid 1px var(--color-150);
+}
+
+ul * + *, ol * + * {
+  margin-top: 8px;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1, h2,
+h3, h4 {
+  font-family: "Young Serif", sans-serif;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+h3 {
+  color: var(--headings-color);
+  font-size: 1.75rem;
+  margin-top: 25px;
+}
+
+ol {
+  padding-left: 22px;
+}
+
+ol ::marker {
+  font-size: medium;
+}
+
+ol li {
+  padding-left: 16px;
+}
+
+ul li {
+  display: flex;
+  align-items: center; 
+}
+
+ul li::before {
+  content: "•";
+  display: inline-block;
+  color: var(--headings-color);
+  margin-left: 7px;
+  margin-right: 27px;
+}
+
+::marker {
+  color: var(--headings-color);
+  font-size: smaller;
+  font-weight: bold;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Outfit", sans-serif;
+  color: var(--color-600);
+  background-color: var(--main-backgroundColor);
+}
+
+main {
+  max-width: 23.4375rem;
+  margin: 0 auto ;
+}
+
+article > section {
+  padding: 32px;
+}
+
+header {
+  padding-top: 8px;
+}
+
+article header h2 {
+  font-size: 2.25rem;
+  color: var(--color-900);
+  line-height: 1;
+}
+
+article header p {
+  margin-top: 24px;
+}
+
+.timeline {
+  background-color: var(--timeline-backgroundColor);
+  border-radius: 15px;
+  margin-top: 32px;
+}
+
+.timeline h3 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--timeline-color);
+  padding: 20px 24px 0;
+  margin-top: 22px;
+}
+
+.timeline ul {
+  padding: 0 24px 24px;
+  margin-top: 12px;
+  border-bottom: none;
+}
+
+.nutrition h3 {
+  margin-top: 1em;
+}
+
+.nutrition p {
+  text-wrap: balance;
+  padding: 1em 0 .7em;
+}
+
+.nutrition dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.nutrition dl dt {
+  padding: .8em 0 .7em 2em;
+}
+
+.nutrition dl dd {
+  padding: .8em 0 .7em 0.5em;
+  color: var(--headings-color);
+  font-weight: bold;
+}
+
+.nutrition dl > *:nth-child(1n + 3) {
+  border-top: solid 1px var(--nutrition-color);
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 23.5rem) {
+  body {
+    background-color: var(--body-desktop-backgroundColor);
+  }
+
+  main {
+    background-color: var(--main-desktop-backgroundColor);
+    max-width: 46.125rem;
+    padding: clamp(0.063rem, -2.456rem + 10.744vw, 2.5rem);
+    margin-top: clamp(0%, -3.18rem + 13.534vw, 10%);
+    border-radius: 20px;
+  }
+
+  main article img {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  main header {
+    margin-top: 2em;
+  }
+
+  article > section {
+    padding: max(0px, calc(8rem + -25.6vw));
+
+  }
+
+  .nutrition p {
+    text-wrap: initial;
+  }
+
+  .attribution {
+    margin-bottom: clamp(0%, -3.18rem + 13.534vw, 10%);
+  }
+}
